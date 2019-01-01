@@ -1,0 +1,4 @@
+1、HaseMap支持null key和null value  hashtable不支持，这是因为hashmap将null的hash值定为了0
+2、HashMap不是线程安全的，HashTable是线程安全的。HashMap实现线程安全的方法Map map = Collections.synchronziedMap(new HashMap())
+3、HashMap默认长度是16扩容后变成原来的2倍，HashTable扩容后是2n+1
+4、HashMap继承的AbstractHashMap ，HashTable实现的Dictionary

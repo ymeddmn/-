@@ -1,0 +1,5 @@
+a、LinearLayout是最省性能的，再布局嵌套不多的情况下应该使用LinearLayout
+b、使用标签include merge ViewStub
+c、减少层级嵌套，可以通过Gpu过度绘制查看
+d、去除不必要的背景getWindow().setBackGroundDrawable(null)
+e、文字和图片一起的时候使用drawableLeft这种方式实现

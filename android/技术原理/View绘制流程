@@ -1,0 +1,13 @@
+performTraversal()
+performMeasure()
+performLayout()
+performDraw()
+measure()
+onMeasure()
+layout()
+onLayout()
+
+draw()
+onDraw()
+
+

@@ -1,0 +1,2 @@
+android一般会为每个程序分配16  24Mb内存可以通过android：largeHeap申请更多内存
+

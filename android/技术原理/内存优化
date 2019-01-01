@@ -1,0 +1,30 @@
+主要为了避免oom和频繁GC导致性能下降
+a、流要及时关闭，包括查询ContentProvider的指针
+b、加载图片的时候合理选择编码方式、使用inSampleSize
+c、使用静态内部类和WeakRefreence代替内部类，主要是handler AsyncTask上面
+d、使用Webview记得在onDestory中要及时移除和销毁，webview.removeAllViews()  webview.destory()
+e、使用LeakCanary检测内存泄露
+
+
+
+activity5秒内没有响应出现anr  broadcastreceiver  10秒    service20秒
+
+出现ANR时，adb pull data/anr/tarces.txt 结合log分析
+
+
+
+
+其他性能优化：
+a、常量使用static final修饰
+b、使用SplashArray代替HashMap
+e、不要过度使用枚举因为枚举占用内存空间大，可以使用静态常量代替
+f、数据存储使用批量插入查询，避免多次插入查询
+
+
+
+内存泄露本质：长生吗周期的对象引用短生命周期的对象导致短生命周期不能及时释放
+容易引起这些的情况：
+a、静态集合类引起内存泄露
+b、handler引用
+c、各种连接没有关闭：io  socket  cursor
+d、java中的匿名内部类持有宿主类的引用

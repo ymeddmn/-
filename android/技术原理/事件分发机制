@@ -1,0 +1,4 @@
+dispatchTouchEvent()
+onInterceptTouchEvent()
+onTouchEvent()
+requestDisallowInterceptTouchEvent(boolean)
