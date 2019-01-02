@@ -1,0 +1,6 @@
+compileSdkVersion：项目的编译版本告诉你用哪个sdk版本编译你的apk，仅仅是编译的时候用到而已不会打包到app中
+minSdkVersion：最小的sdk版本，运行的最低要求，也是判断手机是否可以安装该apk的依据
+targetSdkVersion：向前兼容，在targetSdkVerson没有更新前系统不会向前兼容，比如targetSdkVersion设置为22的时候系统不会进行运行时权限检查，如果设置为23就会有
+
+充要条件：minSdkVersion<targetSdkVersion<compileSdkVersion
+

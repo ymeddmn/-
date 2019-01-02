@@ -1,0 +1,11 @@
+
+
+LruCache是将数据缓存到内存中去，
+DiskLruCache是将数据缓存到外部存储中
+DiskLrucache如果想使用要直接将这个类复制到项目中，sdk并没有这个类
+使用DiskLruCache必须申请运行时权限
+
+
+
+LruCache：内部是一个LinkedHashMap使用强引用的方式缓存对象，当缓存满时移除最近最少使用的对象，添加新的对象（最近最少使用）
+

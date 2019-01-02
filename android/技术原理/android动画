@@ -1,0 +1,24 @@
+1、android中有哪几种动画
+a、属性动画：在动画进行过程中动态改变控件属性来达到动态效果
+ObjectAnimator，ValueAnimator用于指定单个动画。
+AnimatorSet，动画集合里面可以放上面两种单个动画
+
+b、补间动画
+c、帧动画：一张张图片组合起来，通过指定图片的展示顺序，打到动画展示的动态效果
+
+2、差值器类型：
+a、LinearInterpolator :现行差值器
+b、AccelerateInterpolator：加速度差值器
+c、DecelerateInterpolator：减速差值器
+
+
+3、系统提供的五种补间动画：
+a、平移动画：TranslateAnimation
+b、缩放动画：ScaleAnimation
+c、旋转动画：RotateAnimation：
+d、透明度动画：AlphaAnimation
+e：组合动画：AnimationSet
+
+4、差值器，估值器
+差值器：根据动画进度计算出当前属性改变的百分比
+估值器：设置属性值从初始值到结束值的变化具体数值

@@ -1,2 +1,7 @@
 linux kernel,lib dalvik vm ,application framework, app
 
+1、四个层
+Application层  
+ ApplicationFrameWork层  系统服务都位于这个层
+ Libraries  系统运行库层  系统库和android运行时
+ Linux kernel（内核层）

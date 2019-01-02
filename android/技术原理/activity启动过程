@@ -1,0 +1,7 @@
+1、android系统中，应用程序是由Launcher启动起来的，Launcher本省也是一个应用程序，点击Launcher上面的图标Launcher就会对应的应用程序启动起来
+2、程序打开时就创建了一个任务栈，用于存储当前程序的activity，所以activity属于一个任务栈，只有任务栈顶的activity才可以跟用户进行交互
+3、当退出程序的时候会把所以activity清除出栈、然后任务栈会被销毁
+4、standard：标准启动模式
+5、singleTop：独享任务栈顶，如果启动一个activity的时候，已经有一个该activity的实例位于栈顶则不再生成新的而是直接使用
+6、singleTask：如果将要启动的activity在栈中已经存在那么就销毁这个activity上面的缩影activity将它移动到栈顶
+7、singleInstance：它会启动一个新的栈结构，将activity放置在这个结构中，并且保证不会再有其他activity实例进入
