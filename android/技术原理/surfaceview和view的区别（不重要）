@@ -1,0 +1,17 @@
+1、surfaceview有独立的绘图表面，因此其ui可以在一个独立的线程中绘制，由于不占用主线程资源它的绘制比较高效，因为android的绘制是一层一层的所以普通的veiw绘制效率比较低
+
+2、android系统每隔16ms会通知view绘制，在一些页面如果执行很多刷新逻辑导致刷新时间超过了16ms就会导致丢贞或者卡顿，很容易导致anr问题
+
+3、SurfaceView继承子View，Surfaceview有两个子类GLSurfaceview和VideoView
+
+4、在SurfaceView中可以通过获得SurfaceHolder操作SurfaceView，绘制的时候就是调动Canvas绘制
+SurfaceView通过继承SurfaceHolder接受生命周期的回调，三个生命周期分别是：
+surfaceCreated(holder)
+surfaceChanged(holder,format,width,height)
+surfaceDestroyed(holder)
+这三个生命周期都是在主线程回调的
+
+5、SurfaceView的双缓冲：
+SurfaceView更新视图的时候使用双缓冲，frontCanvans和backFrontCanvans，每次显示的都是frontCanvans，backCanvans显示的是上一次的视图，当使用lockCanvans（）获取画布的时候实际上获取的是bacCanvans，当绘制完成的时候再调用unlockCanvansAndPost（canvans）比较视图，这样把正在展示的视图变换为backCanvans
+这样做的好处是绘制期间不会出现黑屏的情况
+

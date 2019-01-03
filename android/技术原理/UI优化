@@ -3,3 +3,10 @@ b、使用标签include merge ViewStub
 c、减少层级嵌套，可以通过Gpu过度绘制查看
 d、去除不必要的背景getWindow().setBackGroundDrawable(null)
 e、文字和图片一起的时候使用drawableLeft这种方式实现
+
+
+
+1、android   16ms进行一次绘制，所以我们在绘制的时候如果超过了16ms那么就会发生卡顿产生掉帧现象
+2、过度绘制：在用户看不到的地方做了太多绘制
+3、动画较多导致过多消耗cpu gpu资源
+

@@ -1,0 +1,34 @@
+1、服务分为本地服务（LocalService）和远程服务（RemoteService）
+本地服务：依附于主线程，主进程杀死后服务便被杀死
+远程服务：远程服务为独立的进程，在manifest中加入android:process，由于是独立的进程当activity所在进程被杀死的时候Service依然可以运行
+
+2、启动方法：
+startService：主要用于启动一个服务执行后台任务，不进行同学，结束用stopService
+bindService：该方法启动的服务可以和服务进行通信，停止服务用unbindService
+startService和bindService一起用：停止服务的时候同时stopServie和unbindService
+
+3、service的生命周期方法
+a、onCreate：如果service没有被创建过，那么会回调onCreate方法，否则不会回调onCreate
+b、onStartCommend：每次用startService都会回调这个方法，
+c、onBind：每次绑定都会调用
+d、onDestory：销毁服务的时候调用
+
+
+4、bindService启动的服务是典型的client-server关系，server只有一个，但是绑定着可以是多个
+当activity销毁的时候activity会自动解除与server的绑定关系，也可以主动调用unbindService方法解除绑定，当没有任何activity与service绑定的时候service会销毁
+
+bindService后发生的事情：
+a、如果Service不存在则执行onCreate onBind
+b、client实例ServiceConnection执行onServiceConnected
+
+
+5、如何保证service不被杀死
+a、onStartCommend中返回START_STICKIY
+b、在配置文件中android:priority = "1000"提高service的优先级到最高
+c、将service设置为前台任务
+d、在onDestory里面重启服务
+e、监听系统广播
+f、root了的手机可以将app打包成系统应用
+g、联系厂商设置白名单
+
+
