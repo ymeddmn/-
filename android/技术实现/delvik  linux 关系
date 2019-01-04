@@ -1,2 +1,9 @@
 delvik虚拟机基于寄存器，jvm虚拟机基于栈。基于寄存器的虚拟机编译的时候时间更短
 dalvik虚拟机执行.dex字节码   jvm虚拟机执行.class字节码
+
+
+1、Dalvik和Jvm的区别
+相同：都是java语法
+不同：字节码的格式不同 dalvik是dex   Jvm是class
+dalvik是基于寄存器的，jvm是给予堆栈的，前者运行程序比后者快
+Dalvik可以允许多个实例运行，也就是说每个app都是独立的泡在一个VM中，这样的好处是一个app崩溃只会影响到他自己

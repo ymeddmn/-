@@ -1,0 +1,8 @@
+1、Window是通过WindowManager来管理的
+2、Android系统中有很多服务，这些服务在app执行的时候回将所有的服务注册到一个Map中，动我们想用某个服务的时候可以通过Context.getSystemService来获取服务
+3、WindowManager主要是管理Window的一个接口类，主要定义了一些对View的操作和一些常量（例如添加View，移除View，删除View），WMS是WindowManagerServer的缩写，主要是连接WindowManager与Window之间的Binder通信，即WindowManager通过WMS操作Window
+
+4、Window的类型大致包括三类：应用程序窗口，子窗口，系统窗口
+a、应用程序窗口：对应一个activity，
+b、子窗口：不能独立的存在必须依附于父窗口，例如dialog
+c、系统窗口：系统窗口等级较高，例如Toast，输入法，状态栏，系统错误提示窗
