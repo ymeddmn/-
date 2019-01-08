@@ -1,0 +1,4 @@
+alpha_8:每个像素占用一个byte
+argb_4444:每个像素占用两个byte
+argb_8888:每个像素占用4个byte
+rgb_565:每个像素占用2byte
