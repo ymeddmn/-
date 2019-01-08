@@ -1,0 +1,6 @@
+1、自动装箱发生在编译期
+例：
+Integer a = 128;
+反编译的结果
+Integer a = Integer.valueOf(128);
+

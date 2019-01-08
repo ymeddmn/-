@@ -1,0 +1,14 @@
+1、Thread.yield() 方法，使用了这个方法后线程会把自己的cpu执行时间让掉，让自己或者其他线程运行
+
+2、Thread线程状态
+a、runnable（可运行状态）  
+线程准备好了随时可以被调度器分配给cpu执行
+b、waiting（等待）  
+线程处于runnable状态时候调用wait方法，这时候就进入waiting状态，进入这个状态后可以调用notify或者notifyAll方法唤醒，否则会一直处于这个状态
+c、time waiting（计时等待）
+这个状态会自己设定一个时间定时醒来，时间一到就进入到runnable状态
+d、terminated（结束）
+e、blocked（阻塞）
+比如线程A在运行的时候，线程B获得了cpu进入了runnable状态，这个时候A就进入了阻塞状态
+
+
