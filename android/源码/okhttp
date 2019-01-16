@@ -1,2 +1,28 @@
 
 先把okhttp的使用总结一遍
+
+1.okhttp源码
+a、首先看两个方法 executed和equeue
+
+executed：	client.dispatcher().executed(this);  Dispatcher调用execute方法直接把请求放到runningAsyncCalls队列里面
+			executed请求的形参是一个RealCall（）executed用于进行同步请求
+
+
+equeue：Dispatcher里面还有一个enqueue方法，这个方法的形参与executed不同是AsyncCall用于进行异步请求
+		Dispatcher里面有两个队列runningAsyncCalls和readyAsyncCalls（前者是正在运行的请求队列，后者是阻塞的请求队列）
+		在enqueue方法里面先判断 runningAsyncCalls的请求数是否大于最大请求数量   是：将请求加入readyAsyncCalls执行线程池  否：将请求加入readyAsyncCalls
+
+b、getResponseWithInterceptorChain
+Response response = getResponseWithInterceptorChain(forWebSocket);
+这两个方法最终的本质都是调用getResponseWithInterceptorChain方法获得响应
+getResponseWithInterceptorChain方法里面会新建一个ApplicationInterceptorChain调用ApplicationInterceptorChain的proceed方法获得响应
+ApplicationInterceptionChain的processd方法里面通过OkhttpClient拿到所有的拦截器查看是否有拦截器里面可以进行返回（有些情况本地有缓存可能会在这里被拦截），如果请求没有被拦截方法继续向后走
+
+c、RealCall getResponse
+最终请求获得返回是在这里完成的（这个方法里面包含给请求添加默认请求头）
+
+这个方法里面会生成一个HttpEngine  
+
+HttpEngine包含两个重要的方法sendRequest（）   ，readResponse（）前者用于生成请求，后者用于读取请求
+
+Response通过engine.getResponse()  **Response response = engine.getResponse()**方法得到

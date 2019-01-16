@@ -1,0 +1,1 @@
+1、retrofit是对okhttp做了一层请求接口的封装，工作本质是okhttp完成的
