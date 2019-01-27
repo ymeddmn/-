@@ -7,7 +7,7 @@ b、补间动画
 c、帧动画：一张张图片组合起来，通过指定图片的展示顺序，打到动画展示的动态效果
 
 2、差值器类型：
-a、LinearInterpolator :现行差值器
+a、LinearInterpolator :线性差值器
 b、AccelerateInterpolator：加速度差值器
 c、DecelerateInterpolator：减速差值器
 

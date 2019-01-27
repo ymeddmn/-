@@ -8,7 +8,7 @@ android提供了4中常用的操作多线程的方式
 4、IntentService
 
 
-1、android的主线程中包含一个消息队列MessageQueue，该队列可以存放一系列Message Runnable对象，我们可以通过Hanlder向消息队列中放入Message 或Runnable。handler会再创建的时候绑定它所在的线程（不一定非要再主线程），再出队列的时候会在Handler绑定的线程中处理Message Runnable
+1、android的主线程中包含一个消息队列MessageQueue，该队列可以存放一系列Message Runnable对象，我们可以通过Hanlder向消息队列中放入Message 或Runnable。handler会在创建的时候绑定它所在的线程（不一定非要再主线程），再出队列的时候会在Handler绑定的线程中处理Message Runnable
 
 handler的缺点是代码冗余较多
 
@@ -18,7 +18,7 @@ handler的缺点是代码冗余较多
 可以通过cancel取消任务
 
 3、ThreadPoolExecutor  提供了一组线程池，共四种
- a、newFixedThreadPool（）  创建一个定长的线程池，每次新任务创建一个新线程知道达到线程池的长度
+ a、newFixedThreadPool（）  创建一个定长的线程池，每次新任务创建一个新线程直到达到线程池的长度
  b、newCacheThreadPool()   创建一个可缓存的线程池，如果线程的长度超过了处理的需要会重复利用已经闲置的线程，不会对线程的长度做出限制
  c、newScheduleThreadPool()   创建一个定长的线程池，支持以定时和周期的方式执行
  d、newSingleThreadExecutor()  创建一个单线程化的executor，它只创建单一的工作线程来执行任务

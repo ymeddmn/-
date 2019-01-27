@@ -1,0 +1,18 @@
+本总结借鉴文章：https://blog.csdn.net/lihaoxiang123/article/details/78977181
+
+mvc： 
+model view controller
+视图层（布局文件）
+控制层 Activity 主要作为view和model之间的桥梁作用
+model  是新建的一个类，处理数据和请求网络  activity会持有model的引用
+
+
+mvp：
+model  view presenter
+view、负责ui绘制、于用户进行交互
+model、负责存储 检索 操纵数据
+presenter、view和model的中间纽带  控制中心而不是单纯处理view操作的
+
+mvp优点：
+a、代码不臃肿
+b、model的改动不会影响activity

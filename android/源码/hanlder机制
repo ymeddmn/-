@@ -29,5 +29,5 @@ sThreadLocal.set(new Looper(quitAllowed))  创建一个新的Looper，这里重�
 Looper.prepareMainLooper方法中有一个同步代码块sMainLooper = myLooper();是为了避免重复创建Looper
 
 重点说一下Looper.loop()这个方法：
-在这个方法里面维持了一个死循环用于轮询消息。方法里面有个重要的方法msg.target.dispatchMessage(msg);  (msg：Message   rarget：Handler)这个方法用于分发消息，最终会把消息回调给Handler的Callback的handlerMessage方法（Handler本省的的handlerMessage也会被回调）
+在这个方法里面维持了一个死循环用于轮询消息。方法里面有个重要的方法msg.target.dispatchMessage(msg);  (msg：Message   rarget：Handler)这个方法用于分发消息，最终会把消息回调给Handler的Callback的handlerMessage方法（Handler本身的的handlerMessage也会被回调）
 
