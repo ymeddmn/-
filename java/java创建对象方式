@@ -1,0 +1,5 @@
+1、使用new关键字  					调用构造函数
+2、使用Class的newInstance方法  		调用了构造函数
+3、使用Constructor的newInstance方法   调用个构造函数
+4、使用clone方法   					不调用构造函数
+5、使用反序列化     					不调用构造函数

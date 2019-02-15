@@ -4,9 +4,9 @@
 
 3、热修复生成新dex的步骤
 a、通过PathClassLoader来加载我们自身App的dex
-b、通过DexClassLoader来加载我们的不定的dex文件
+b、通过DexClassLoader来加载我们的补丁的dex文件
 c、反射两个classLoader
-d、反射classloader中的pathlist，其中一个事我们自己应用的，另外一个事我们不定的
-e、合并两个反射得到的element数组，把不定的dex放在数组的前面
+d、反射classloader中的pathlist，其中一个事我们自己应用的，另外一个事我们补丁的
+e、合并两个反射得到的element数组，把补丁的dex放在数组的前面
 f、将合并的新数组通过Field重新设置到我们自身的dexPathlist覆盖有bug那个Element数组
 g、通过Android build-tools中的dx命令打包一个没有bug的dex

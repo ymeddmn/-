@@ -4,7 +4,7 @@ ObjectAnimator，ValueAnimator用于指定单个动画。
 AnimatorSet，动画集合里面可以放上面两种单个动画
 
 b、补间动画
-c、帧动画：一张张图片组合起来，通过指定图片的展示顺序，打到动画展示的动态效果
+c、帧动画：一张张图片组合起来，通过指定图片的展示顺序，达到动画展示的动态效果
 
 2、差值器类型：
 a、LinearInterpolator :线性差值器

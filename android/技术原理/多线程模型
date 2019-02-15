@@ -1,7 +1,7 @@
 当我们启动一个app的时候android系统会启动一个Linux process，这个进程包含一个线程就是我们的UI Thread
 可以再manifest中加入android:process指定组件运行在不同进程中，这样当一个组件启动的时候如果进程已经存在那么组件直接通过这个进程被启动起来
 如果卡顿时间超过5秒就会出现anr  application not response
-android提供了4中常用的操作多线程的方式
+android提供了4种常用的操作多线程的方式
 1、Handler+Thread
 2、AsyncTask
 3、ThreadPoolExecutor
