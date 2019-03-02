@@ -10,8 +10,8 @@ Looper：维持一个无限循环，轮询消息
 1、这里只讲解核心代码：
 方法的调用链条：handler发送一条消息（sendMessage）->sendMessageDelayed->sendMessageAtTime->enqueueMessage->queue.enqueueMessage  
 enqueueMessage：这个方法中会把Handler赋值给Message的target成员变量，也就是说message是持有他handler的引用的
-queue.enqueueMessage：最终就是在Messagequeue方法中吧消息添加到消息队列中的。
-将消息放到丢列中会有两种情况：（推送的消息为msg1，当前队列第一个消息为msg2）
+queue.enqueueMessage：最终就是在Messagequeue方法中把消息添加到消息队列中的。
+将消息放到队列中会有两种情况：（推送的消息为msg1，当前队列第一个消息为msg2）
 a、msg1.when==0或者msg1.when<msg2.when：这个方法中首先会判断推送过来的消息和当前队列第一个消息的执行时间，如果msg1.when==0或者msg1.when<msg2.when那么立即把当前消息放到队列的头部。
 b、msg1.when>msg2.when ：这种情况说明消息并不是第一个要被执行的消息，应该把消息插入到队列中合适的位置。所以会遍历队列，将msg1插入到合适的位置
 
@@ -25,9 +25,9 @@ Looper的准备和轮询状态是在ActivityThread类中的main方法完成的�
 先方法调用链条： Looper.prepareMainLooper->prepare(boolean)->sThreadLocal.set(new Looper(quitAllowed))->Looper.loop()
 
 注意点：
-sThreadLocal.set(new Looper(quitAllowed))  创建一个新的Looper，这里重点关注Looper的构造方法。在Looper的构造方法中长久了一个消息队列MessageQueue并且获取了当前线程
+sThreadLocal.set(new Looper(quitAllowed))  创建一个新的Looper，这里重点关注Looper的构造方法。在Looper的构造方法中创建了一个消息队列MessageQueue并且获取了当前线程
 Looper.prepareMainLooper方法中有一个同步代码块sMainLooper = myLooper();是为了避免重复创建Looper
 
 重点说一下Looper.loop()这个方法：
-在这个方法里面维持了一个死循环用于轮询消息。方法里面有个重要的方法msg.target.dispatchMessage(msg);  (msg：Message   rarget：Handler)这个方法用于分发消息，最终会把消息回调给Handler的Callback的handlerMessage方法（Handler本身的的handlerMessage也会被回调）
+在这个方法里面维持了一个死循环用于轮询消息。方法里面有个重要的方法msg.target.dispatchMessage(msg);  (msg：Message   rarget：Handler)这个方法用于分发消息，最终会把消息回调给Handler的Callback的handlerMessage方法（Handler本身的handlerMessage也会被回调）
 

@@ -10,7 +10,7 @@ executed：	client.dispatcher().executed(this);  Dispatcher调用execute方法�
 
 equeue：Dispatcher里面还有一个enqueue方法，这个方法的形参与executed不同是AsyncCall用于进行异步请求
 		Dispatcher里面有两个队列runningAsyncCalls和readyAsyncCalls（前者是正在运行的请求队列，后者是阻塞的请求队列）
-		在enqueue方法里面先判断 runningAsyncCalls的请求数是否大于最大请求数量   是：将请求加入readyAsyncCalls执行线程池  否：将请求加入readyAsyncCalls
+		在enqueue方法里面先判断 runningAsyncCalls的请求数是否大于最大请求数量   是：将请求加入readyAsyncCalls执行线程池  否：将请求加入runningAsyncCalls
 
 b、getResponseWithInterceptorChain
 Response response = getResponseWithInterceptorChain(forWebSocket);

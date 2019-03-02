@@ -1,7 +1,22 @@
 linux kernel,lib dalvik vm ,application framework, app
 
+android底层建立在Linux系统之上，采用一种软件堆叠的方式进行构建，这种方式使得层与层之间相互隔离明确各层分工。当下层发生改变的时候上层不需要改变
+
 1、四个层
-Application层  
- ApplicationFrameWork层  系统服务都位于这个层
- Libraries  系统运行库层  系统库和android运行时
+Application层  （应用层）
+ ApplicationFrameWork层 （应用程序框架层） 系统服务都位于这个层
+ Libraries  系统运行库层  （系统运行库层） 系统库和android运行时
  Linux kernel（内核层）
+
+
+Application：包含了很多应用程序 例：短信、电话、时钟、录音、图片
+ApplicationFrameWork层：  主要是系统服务
+Libraries层： 分为两部分 系统库和安卓运行时，Android运行时库由Android核心库集和Dalvik虚拟机两部分组成。Android核心库集，能够允许开发者使用Java语言来编写Android应用；而Dalvik虚拟机则使得每一个Android应用都能运行在独立的进程中，并且拥有一个自己的Dalvik虚拟机实例。
+
+		系统库层：是ApplicationFrameWork层的支撑，是连接应用程序框架层和内核层的重要纽带（主要包括 Surface Manager、Media FrameWork、Sqlite、OpenGl/ES、WebKit、SSL、Libc）
+
+		android运行库：android程序采用java语言编写，其运行时分为核心库和Dalvik两部分
+		核心库提供了java语言的大部分功能
+		Dalvik：每个应用程序都对应一个Dalvik虚拟机实例
+
+内核层：主要包括：安全、内存管理、进程管理、网络协议、驱动模型

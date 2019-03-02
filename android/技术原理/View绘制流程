@@ -27,7 +27,7 @@ e、drawDefaultFocusHighLight（canvans）：绘制默认焦点高亮
 viewRootImpl，DecorView是视图树里面的顶层布局
 
 
-3、measurespeac:MeasureSpec封装了从父View传递到子View的布局需求，每个MeasureSpec代表宽度或者高度的要求，包含了size和mode （MeasureSpec的32位证书，前两位代表mode后面30位代表size）
+3、measurespeac:MeasureSpec封装了从父View传递到子View的布局需求，每个MeasureSpec代表宽度或者高度的要求，包含了size和mode （MeasureSpec的32位中，前两位代表mode后面30位代表size）
 
 
 

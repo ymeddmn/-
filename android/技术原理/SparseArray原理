@@ -1,0 +1,24 @@
+SparseArray是用来代替HashMap的
+
+SparseArray比HashMap更节省内存
+插入数据的时候SparseArray的效率低
+SparseArray适合小于100条数据的情况，低于1000条数据的时候使用SparseArray最优
+
+
+
+参考：https://blog.csdn.net/qwer123qwerz/article/details/79345524
+
+
+
+
+
+现在非常流行的内存缓存技术是LruCache（LRU是Least Recently Used 近期最少使用算法）,这个类非常适合用来缓存图片，它的主要算法原理是把最近使用的对象用强引用存储在 LinkedHashMap 中，并且把最近最少使用的对象在缓存值达到预设定值之前从内存中移除。
+
+
+
+DiskLruCache是不能new出实例的，如果我们要创建一个DiskLruCache的实例，则需要调用它的open()方法，接口如下所示：
+
+public static DiskLruCache open(File directory, int appVersion, int valueCount, long maxSize)
+1
+open()方法接收四个参数，第一个参数指定的是数据的缓存地址，第二个参数指定当前应用程序的版本号，第三个参数指定同一个key可以对应多少个缓存文件，基本都是传1，第四个参数指定最多可以缓存多少字节的数据。
+

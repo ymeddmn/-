@@ -9,7 +9,7 @@ glide  fresco  picasoo
 
 glide的优势
 1、glide可以从多个源加载图片，网络 本地 Uri等，并且为我们封装了很好的缓存机制能够保持一个较低的内存消耗
-2、加载同样一张图片Glide比Picass占用内存小，因为Picass默认图片格式rgb_8888   glide默认 rgb_565（glide的图片格式是可以修改的，自定义一个对象在配置文件中用
+2、加载同样一张图片Glide比Picass占用内存小，因为Picass默认图片格式argb_8888   glide默认 rgb_565（glide的图片格式是可以修改的，自定义一个对象在配置文件中用
 meta-data配置）
 3、picass默认加载完整尺寸的图片大小，glide会根据imageveiw的大小加载图片（所以就算图片格式一样，glide依然比picass省内存）
 4、glide会为不同尺寸的imageview缓存不同的图片大小（这样的坏处是占用磁盘空间较多，但是这种方式在图片已经被缓存的情况下可以加快图片的加载速度）

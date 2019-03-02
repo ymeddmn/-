@@ -2,7 +2,7 @@
 
 2、android系统每隔16ms会通知view绘制，在一些页面如果执行很多刷新逻辑导致刷新时间超过了16ms就会导致丢贞或者卡顿，很容易导致anr问题
 
-3、SurfaceView继承子View，Surfaceview有两个子类GLSurfaceview和VideoView
+3、SurfaceView继承自View，Surfaceview有两个子类GLSurfaceview和VideoView
 
 4、在SurfaceView中可以通过获得SurfaceHolder操作SurfaceView，绘制的时候就是调动Canvas绘制
 SurfaceView通过继承SurfaceHolder接受生命周期的回调，三个生命周期分别是：

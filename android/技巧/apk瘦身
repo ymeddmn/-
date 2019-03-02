@@ -1,0 +1,16 @@
+1、使用同一套资源
+2、使用代码混淆
+3、开启shrinkResources去除无用资源
+用法：
+android {
+	buildTypes {
+		release {
+			shrinkResources true
+		}
+	}
+}
+
+4、启动页大图展示使用jpg格式，（相比较png格式图片大小会减少一半）
+5、动态库只保留armable
+6、避免使用较大的库（不能因为小功能引入大库）
+7、插件化

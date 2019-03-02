@@ -3,7 +3,7 @@
 远程服务：远程服务为独立的进程，在manifest中加入android:process，由于是独立的进程当activity所在进程被杀死的时候Service依然可以运行
 
 2、启动方法：
-startService：主要用于启动一个服务执行后台任务，不进行同学，结束用stopService
+startService：主要用于启动一个服务执行后台任务，结束用stopService
 bindService：该方法启动的服务可以和服务进行通信，停止服务用unbindService
 startService和bindService一起用：停止服务的时候同时stopServie和unbindService
 
@@ -14,7 +14,7 @@ c、onBind：每次绑定都会调用
 d、onDestory：销毁服务的时候调用
 
 
-4、bindService启动的服务是典型的client-server关系，server只有一个，但是绑定着可以是多个
+4、bindService启动的服务是典型的client-server关系，server只有一个，但是绑定者可以是多个
 当activity销毁的时候activity会自动解除与server的绑定关系，也可以主动调用unbindService方法解除绑定，当没有任何activity与service绑定的时候service会销毁
 
 bindService后发生的事情：
