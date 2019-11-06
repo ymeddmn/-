@@ -12,3 +12,9 @@ e、blocked（阻塞）
 比如线程A在运行的时候，线程B获得了cpu进入了runnable状态，这个时候A就进入了阻塞状态
 
 
+
+java线程可不可以被启动两次：
+		不可以，会报错 IllegalThreadStateException,线程只能启动一次，一旦处于终止状态就不能再次启动
+
+java中有守护线程存在（Daemon Thread），守护线程可以在程序结束的时候继续执行
+
