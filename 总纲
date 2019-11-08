@@ -1,0 +1,37 @@
+android
+	基础知识
+		Handler
+		四大组件
+		启动模式
+	ui
+		自定义控件
+		滑动嵌套
+		时间传递处理
+	性能
+		性能优化
+			网络
+			电量
+			内存
+			cpu
+		弱网处理
+		
+java
+	集合：
+		List
+			ArrayList
+			LinkedList
+
+		Map
+			HashMap
+			TreeMap
+数据结构
+	树的原理
+	树的遍历
+	红黑树
+	哈希树
+算法
+	各种排序算法
+	算法概念背诵
+
+kotlin
+flutter
