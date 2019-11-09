@@ -47,3 +47,5 @@ note
 	因为字符串是不可变的，创建的时候hashcode就被缓存了
 14、用可变的类做HashMap的key有什么问题
 	hashcode值可能改变，导致put进去的值，无法get出来
+15、HashMap中数据越多发生碰撞的几率就越大，所以需要进行扩容
+16、如果map.get("key")得到的数据是null，那么可能存储的就是null或者对应的key不存在HashMap中

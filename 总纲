@@ -7,6 +7,12 @@ android
 		自定义控件
 		滑动嵌套
 		时间传递处理
+	存储
+		数据库
+		网络
+		sharepreference
+		file
+		LRU
 	性能
 		性能优化
 			网络
@@ -14,6 +20,7 @@ android
 			内存
 			cpu
 		弱网处理
+
 		
 java
 	集合：
@@ -24,6 +31,7 @@ java
 		Map
 			HashMap
 			TreeMap
+	StringBuffer和StringBuilder
 数据结构
 	树的原理
 	树的遍历

@@ -1,1 +1,16 @@
 LinkedHashMap
+不错的参考文章：https://blog.csdn.net/qq_26857649/article/details/81713420
+1、LinkedHashMap是有序的（HashMap是无序的）
+2、LinkedHashMap继承自HashMap并且实现了Map接口
+3、LinkedHashMap是数组+双向链表实现的
+4、LinkedHashMap可以按照访问顺序访问也可以按照插入顺序访问(有个accessOrder构造参数可以指定不按照访问顺序遍历，默认按照插入顺序)
+5、LinkedHashMap的有序增加了时间和空间上的开销
+6、和HashMap一样LinkedHashMap可以插入null的key和value
+7、LinkedHashMap比HashMap多了一个双向链表的头结点（Header）和一个accessOrder属性，其它的在使用上一样
+8、LinkedHashMap中的removeEldestEntry方法是用来支持LRU算法的
+9、LinkedHashMap进行扩容的时候与HashMap不同，LinkedHashMap直接遍历双向的链表进行重hash，而HashMap使用顺序访问的方式进行扩容
+
+
+note：
+1、LinkedHashMap采用的hash与HashMap相同，但是重新定义了Entry，增加了指针before和after他们用于维护双向链表
+2、相比HashMap而言，LinkedHashMap在向哈希表添加一个键值对的同时，也会将其链入到它所维护的双向链表中，以便设定迭代顺序

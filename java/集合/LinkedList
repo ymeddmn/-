@@ -1,1 +1,36 @@
 LinkedList
+
+1、LinkedList是一个双向循环链表
+2、LinkedList是非同步的（线程不安全）
+3、一个空的LinkedList他都前后指针节点都是自己
+4、头节点是不保存数据的，里面的内容永远为空
+5、LinkedList增加节点逻辑
+		将插入元素转换为节点、增加该节点的前后引用、增加前后节点对该节点的引用
+6、LinkedList删除节点逻辑
+		将该节点的前后节点进行连接、该节点的前后引用设置为null
+7、LinkedList的元素查找使用的是二分，但是只进行一次二分，
+		if (index < (size >> 1)) {
+        	// 如果index距离list中间位置较近，则从头部向后遍历(next)
+        	for (int i = 0; i <= index; i++)
+            e = e. next;
+   		} else {
+        	// 如果index距离list中间位置较远，则从头部向前遍历(previous)
+        	for (int i = size; i > index; i--)
+            e = e. previous;
+    	}
+
+
+
+note：
+1、链表是由一系列的非连续的节点组成的存储结构
+
+2、单链表
+		每个节点的指针指向下一个节点从而链起来的结构，最后一个节点的next指向null
+   单向循环链表
+   		单向循环链表的最后一个节点的next指向head节点，形成一个环
+   双向循环链表
+   		第一个节点的pre指向最后一个节点，最后一个节点的next指向第一个节点
+
+
+ LinkedList和Array比较
+ 1、LinkedList使用foreach方法遍历比较快，ArrayList使用最普通的for循环比较快
