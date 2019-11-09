@@ -1,0 +1,6 @@
+HashSet
+
+
+1、Set内部元素不重复、无序、允许null、线程不安全
+2、HashSet是基于HashMap实现的，HashSet里面有一个成员变量HashMap，将HashSet的值做完HashMap的key保存，HashMap的值是同一个Object对象
+3、HashMap的key值是不可以重复的，所以HashSet的元素不可以重复

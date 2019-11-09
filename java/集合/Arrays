@@ -1,0 +1,9 @@
+Arrays
+
+常见方法：
+1、数组转计划Arrays.asList(array)
+2、集合转数组  list.toArray
+3、排序Arrays.sort()排序
+4、查找元素Arrays.binarySearch(object[],key)
+5、复制数组元素Arrays.copyofRange(array,startIndex,endIndex)
+6、填充元素Arrays.fill(array)

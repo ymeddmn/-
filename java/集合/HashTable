@@ -1,0 +1,10 @@
+HashTable
+
+1、HashTable不允许null值（key value都不行）
+2、HashTable是同步的，因为方法前加上了synchronized
+
+
+HashMap和HashTable的区别
+1、HashMap是HashTable的轻量级实现，主要区别是HashMap允许空，由于非线程安全效率比HashTable高
+2、HashTable继承的是Dictionary同时实现Map接口，HashMap继承的是Map的一个接口
+3、单线程中使用HashMap，多线程使用HashTable
